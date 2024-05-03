@@ -3,8 +3,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build the code using Maven application on VS CODE"
+                echo "Build the code using Maven application"
             }
+        post {
+            success{
+                mail to: "salykeu2017@gmail.com",
+                subject: "Build Status Email",
+                body : "Build was successful!"
+            }
+        }
         }
         stage('Unit and Integration Tests') {
             steps {
