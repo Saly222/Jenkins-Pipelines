@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build the code using Maven application are one"
+                echo "Build the code using Maven application"
             }
         }
         stage('Unit and Integration Tests') {
@@ -23,17 +23,17 @@ pipeline {
         }
         stage('Deploy to Staging') {
             steps {
-                echo "Deploy the application to AWS EC2 instance (staging)"
+                echo "Deploy the application to AWS Code Deploy"
             }
         }
         stage('Integration Tests on Staging') {
             steps {
-                echo "Run integration tests on staging environment"
+                echo "Run integration tests on staging environment in Selenium"
             }
         }
         stage('Deploy to Production') {
             steps {
-                echo "Deploy the application to AWS EC2 instance (production)"
+                echo "Deploy the application to AWS Code Deploy"
             }
         }
     }
